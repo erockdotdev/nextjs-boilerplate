@@ -48,14 +48,14 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    //font-family: 'radnika_next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     font-size: 10px;  
     line-height: 1.6;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
       Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
+    max-width: 1280px;
   }
   a {
     text-decoration: none;
@@ -97,7 +97,7 @@ const GlobalStyles = createGlobalStyle`
   }
   button:focus {
     outline: 0;
-  }}
+  }
 `;
 
 // media query example

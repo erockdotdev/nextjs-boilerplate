@@ -1,8 +1,16 @@
-import LogoLink from "src/components/elements/LogoLink";
-import { FooterStyles, FooterLinksContainerStyles } from "./styles";
-import { FOOTER_LINKS } from "./links";
-import { LinkType } from "src/typescript/global-types";
 import Link from "next/link";
+import LogoLink from "src/components/elements/LogoLink";
+
+import { FOOTER_LINKS } from "./links";
+import { COPYRIGHT } from "src/constants/literals";
+import { LinkType } from "src/typescript/global-types";
+
+import {
+  FooterStyles,
+  FooterLinksContainerStyles,
+  FooterRightStyles,
+  CopyrightStyles,
+} from "./styles";
 
 function renderFooterLinks(links: LinkType[]) {
   return FOOTER_LINKS.map((link: LinkType) => (
@@ -15,10 +23,15 @@ function renderFooterLinks(links: LinkType[]) {
 export default function Footer() {
   return (
     <FooterStyles>
-      <LogoLink />
       <FooterLinksContainerStyles>
-        {renderFooterLinks(FOOTER_LINKS)}
+        <LogoLink />
       </FooterLinksContainerStyles>
+      <FooterRightStyles>
+        <FooterLinksContainerStyles>
+          {renderFooterLinks(FOOTER_LINKS)}
+        </FooterLinksContainerStyles>
+        <CopyrightStyles>{COPYRIGHT}</CopyrightStyles>
+      </FooterRightStyles>
     </FooterStyles>
   );
 }
