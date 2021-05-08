@@ -7,21 +7,18 @@ const GlobalStyles = createGlobalStyle`
   *     FONTS
   * =================
   */
-
-  /* @font-face {
-    font-family: 'radnika_next';
-    src: url('/static/radnikanext-medium-webfont.woff2')format('woff2');
+   @font-face {
+    font-family: 'RobotoMedium';
+    src: url('/static/fonts/roboto/Roboto-Medium.woff2')format('woff2');
     font-weight: normal;
     font-style: normal;
-  }  */
-
- /**
-  * ===================
-  *     Typography
-  * ===================
-  */
-
-  /* TBD */
+   } 
+   @font-face {
+    font-family: 'Roboto';
+    src: url('/static/fonts/roboto/Roboto-Regular.woff2')format('woff2');
+    font-weight: normal;
+    font-style: normal;
+   } 
 
  /**
   * ==================
@@ -38,7 +35,21 @@ const GlobalStyles = createGlobalStyle`
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.9); 
     --gutter: 2rem;
+
+    --primaryBrandColor: #0000;
+    --secondaryBrandColor: #0000;
+    --thirdBrandColor: #0000;
+
+    --primaryTextDark: #0000;
+    --primaryTextLight: #0000;
+
+    --primaryBackgroundDark: #0000;
+    --secondaryBackgroundDark: #0000;
+
+    --primaryBackgroundLight: #0000;
+    --secondaryBackgroundLight: #0000;
   }
+
  /**
   * =====================
   *     Global Styles
@@ -48,27 +59,21 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    padding: 0;
+    padding: 0 15px 0 15px;
     margin: 0 auto;
     font-size: 10px;  
-    line-height: 1.6;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    line-height: 28.8px;
+    font-family: Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
       Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     max-width: 1280px;
-  }
-  a {
-    text-decoration: none;
-    color: var(--black);
-  }
-  a:hover {
-    text-decoration: underline;
-    cursor: pointer;
+    letter-spacing: .2px;
   }
   img {
     max-width: 100%;
     display: block;
   }
+  // Button Reset
   button {
     background: transparent;
     box-shadow: 0px 0px 0px transparent;
@@ -97,6 +102,79 @@ const GlobalStyles = createGlobalStyle`
   }
   button:focus {
     outline: 0;
+  }
+  legend {
+    padding: 0;
+    display: table;
+  }
+  // Field set reset
+  fieldset {
+    border: 0;
+    padding: 0.01em 0 0 0;
+    margin: 0;
+    min-width: 0;
+  }
+  body:not(:-moz-handler-blocked) fieldset {
+    display: table-cell;
+  }
+  // anchor tag reset
+  a {
+    text-decoration: none;
+    color: var(--black);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+ /**
+  * ===================
+  *     Typography
+  * ===================
+  */
+  h1,h2,h3 {
+    font-family: 'RobotoMedium', serif;
+    letter-spacing: 1px
+  }
+  h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+ 
+  .body {
+    font-weight: 300;
+    &--bold {
+      font-weight: 400;
+    }
+    &--italic {
+      font-style: italic;
+    }
+  }
+  .link {
+    &:hover {
+      text-decoration: underline
+    }
+  }
+  .subtitle {
+    font-size: 1.4rem;
+    &--italic {
+      font-style: italic;
+    }
+  }
+  .caption {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    &--xs {
+      font-size: 14px;
+    }
   }
 `;
 

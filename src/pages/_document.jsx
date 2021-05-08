@@ -23,6 +23,7 @@ export default class MyDocument extends Document {
           https://err.sh/next.js/no-document-viewport-meta
         */}
         <Head>{this.props.styleTags}</Head>
+        {/* <link rel="shortcut icon" href="/static/favicon.ico" /> */}
         <body>
           <Main />
           <NextScript />

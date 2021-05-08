@@ -3,11 +3,6 @@ import { useForm } from "react-hook-form";
 
 //*** Decide what rules need to be in components and what should be set up as global styles */
 
-// global font
-
-// Title
-// - more character spacing
-// bottom margin h1/30 h2/20 h3/15
 // Subtitle
 // Default (body text – as well as most controls, like text boxes, dropdowns, buttons, and menus)
 // - line spacing/height
@@ -34,6 +29,26 @@ const Home = () => {
     <BasePage showNav showFooter>
       <main>
         <h1>NextJS Boiler Plate</h1>
+        <br />
+        <br />
+        <hr />
+        <h2>Font Families</h2>
+        <ul>
+          <li>
+            <u>h1-3 font</u>: RobotoMedium
+          </li>
+          <li>
+            <u>captions</u>: Roboto
+          </li>
+          <li>
+            <u>body</u>: Helvetica font-weight: 300
+          </li>
+          <li>
+            <u>everything else</u>: Helvetica
+          </li>
+        </ul>
+
+        <hr />
         <div>
           <h2>
             <u>Headers</u>
@@ -43,31 +58,66 @@ const Home = () => {
           <h3>Title H3</h3>
           <hr />
         </div>
-
+        <div>
+          <h2>
+            <u>Subtitle</u>
+          </h2>
+          <strong>Regular: </strong>
+          <span className="subtitle">
+            Architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+            voluptatem quia voluptas sit aspernatur.
+          </span>
+          <br />
+          <strong>Italic: </strong>
+          <span className="subtitle subtitle--italic">
+            Architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+            voluptatem quia voluptas sit aspernatur.
+          </span>
+        </div>
         <div>
           <h2>
             <u>Paragraph Tag</u>
           </h2>
-          <p>
+          <p className="body">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            aliquip ex ea commodo consequat.{" "}
+            <span className="body body--italic">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </span>{" "}
+            <span className="body body--bold">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </span>
           </p>
+          <hr />
+        </div>
+        <div>
+          <h2>
+            <u>Anchor Tag</u>
+          </h2>
+          <a className="link">Link</a>
           <hr />
         </div>
 
         <div>
           <h2>
-            <u>Anchor Tag</u>
+            <u>Captions</u>
           </h2>
-          <a>Link</a>
-          <hr />
+          <strong>Caption: </strong>
+          <span className="caption">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur
+          </span>
+          <br />
+          <strong>Caption-xs: </strong>
+          <span className="caption caption--xs">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum
+          </span>
         </div>
-
         <div>
           <h2>
             <u>Unordered List </u>
@@ -90,6 +140,7 @@ const Home = () => {
             <li>Item 3</li>
           </ol>
         </div>
+
         <div>
           <h2>
             {/* https://react-hook-form.com/get-started */}

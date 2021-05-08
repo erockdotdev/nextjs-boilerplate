@@ -9,8 +9,5 @@ export const NavLinkStyles = styled.li`
   }
   a {
     color: var(--black);
-    &:hover {
-      opacity: 0.8;
-    }
   }
 `;
