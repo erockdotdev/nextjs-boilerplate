@@ -12,12 +12,14 @@ const GlobalStyles = createGlobalStyle`
     src: url('/static/fonts/roboto/Roboto-Medium.woff2')format('woff2');
     font-weight: normal;
     font-style: normal;
+    /* font-display: fallback; */
    } 
    @font-face {
     font-family: 'Roboto';
     src: url('/static/fonts/roboto/Roboto-Regular.woff2')format('woff2');
     font-weight: normal;
     font-style: normal;
+    /* font-display: fallback; */
    } 
 
  /**
@@ -62,12 +64,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0 15px 0 15px;
     margin: 0 auto;
     font-size: 10px;  
-    line-height: 28.8px;
     font-family: Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
       Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 18px;
     max-width: 1280px;
-    letter-spacing: .2px;
   }
   img {
     max-width: 100%;
@@ -132,7 +132,7 @@ const GlobalStyles = createGlobalStyle`
   *     Typography
   * ===================
   */
-  h1,h2,h3 {
+  h1,h2,h3,h4,h5 {
     font-family: 'RobotoMedium', serif;
     letter-spacing: 1px
   }
@@ -148,9 +148,14 @@ const GlobalStyles = createGlobalStyle`
     font-size: 28px;
     margin-bottom: 15px;
   }
- 
-  .body {
+  label {
+    font-size: .90rem;
+  }
+  // media query font sizes font size sm/12 m/16 l/20
+  .primary-text {
     font-weight: 300;
+    letter-spacing: .2px;
+    line-height: 28.8px;
     &--bold {
       font-weight: 400;
     }
@@ -158,6 +163,8 @@ const GlobalStyles = createGlobalStyle`
       font-style: italic;
     }
   }
+  // Secondary
+  // 2 pts smaller than Default across all breakpoints
   .link {
     &:hover {
       text-decoration: underline
