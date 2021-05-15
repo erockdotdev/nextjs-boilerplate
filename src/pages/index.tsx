@@ -1,7 +1,5 @@
 import BasePage from "src/components/layouts/BasePage";
-import { useForm } from "react-hook-form";
 import SignUpSample from "src/components/modules/Forms/SampleForm/SignUpSample";
-import SignInSample from "src/components/modules/Forms/SampleForm/SignInSample";
 
 //*** Decide what rules need to be in components and what should be set up as global styles */
 

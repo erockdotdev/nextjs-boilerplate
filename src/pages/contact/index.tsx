@@ -1,5 +1,5 @@
 import BasePage from "src/components/layouts/BasePage";
-import { MOCK_CONTACT_SEO_METADATA } from "src/utils/mocks/SEOMetadata";
+import { MOCK_CONTACT_SEO_METADATA } from "src/utils/mocks/seo-metadata";
 
 const ContactPage = () => {
   // @TODO: set up schema.org Contact info

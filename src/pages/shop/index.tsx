@@ -1,5 +1,5 @@
 import BasePage from "src/components/layouts/BasePage";
-import { MOCK_SHOP_SEO_METADATA } from "src/utils/mocks/SEOMetadata";
+import { MOCK_SHOP_SEO_METADATA } from "src/utils/mocks/seo-metadata";
 
 // @TODO: set up schema.org product info
 const ShopPage = () => {

@@ -1,12 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-
-interface FormValues {
+import Input from "src/components/elements/FormElements/Input";
+import ReactSelect from "src/components/elements/FormElements/ReactSelect";
+import { selectOptions, defaultValue } from "src/utils/mocks/form-data";
+export interface FormValues {
   firstName: string;
   lastName: string;
   age: number;
   gender: string;
   developer: string;
+  comments: string;
+  toppings: string[];
+  shipping: string;
+  flavors: string;
 }
 
 export default function SignUpSample() {
@@ -14,30 +20,33 @@ export default function SignUpSample() {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm<FormValues>();
 
-  console.log("errors", errors);
+  // create select with downshift
+  // custom checkboxes
+  // custom radio buttons
+  // style rest of inputs and validation errors
+  // make components of each
 
   return (
     <div>
       <h3>Sign Up Sample</h3>
       <form
         onSubmit={handleSubmit((data) => {
-          console.log("data", data);
+          console.log("data", JSON.stringify(data, null, 2));
         })}
       >
-        <div>
-          <label htmlFor="firstName">First Name</label>
-          <br />
-          <input
-            {...register("firstName", {
-              required: "First Name is Required",
-              maxLength: 20,
-            })}
-          />
-          {errors.firstName && <p> {errors.firstName.message}</p>}
-        </div>
-
+        <Input
+          register={register}
+          name="firstName"
+          label="First Name"
+          errors={errors}
+          validations={{
+            required: "First Name is Required!!!",
+            maxLength: 20,
+          }}
+        />
         <div>
           <label htmlFor="lastName">Last Name</label>
           <br />
@@ -71,7 +80,7 @@ export default function SignUpSample() {
 
         <div>
           <label htmlFor="comments">Comments</label> <br />
-          <textarea id="comments"></textarea>
+          <textarea {...register("comments")}></textarea>
         </div>
 
         {/* Fieldset and legend should only be used when a higher-level label is necessary. 
@@ -80,13 +89,18 @@ export default function SignUpSample() {
             screen reader behavior and should be avoided. */}
         <fieldset>
           <legend>Select your pizza toppings:</legend>
-          <input id="ham" type="checkbox" name="toppings" value="ham" />
+          <input
+            id="ham"
+            type="checkbox"
+            {...register("toppings")}
+            value="ham"
+          />
           <label htmlFor="ham">Ham</label>
           <br />
           <input
             id="pepperoni"
             type="checkbox"
-            name="toppings"
+            {...register("toppings")}
             value="pepperoni"
           />
           <label htmlFor="pepperoni">Pepperoni</label>
@@ -94,12 +108,17 @@ export default function SignUpSample() {
           <input
             id="mushrooms"
             type="checkbox"
-            name="toppings"
+            {...register("toppings")}
             value="mushrooms"
           />
           <label htmlFor="mushrooms">Mushrooms</label>
           <br />
-          <input id="olives" type="checkbox" name="toppings" value="olives" />
+          <input
+            id="olives"
+            type="checkbox"
+            {...register("toppings")}
+            value="olives"
+          />
           <label htmlFor="olives">Olives</label>
         </fieldset>
         <fieldset>
@@ -107,17 +126,37 @@ export default function SignUpSample() {
           <input
             id="overnight"
             type="radio"
-            name="shipping"
+            {...register("shipping")}
             value="overnight"
           />
           <label htmlFor="overnight">Overnight</label>
           <br />
-          <input id="twoday" type="radio" name="shipping" value="twoday" />
+          <input
+            id="twoday"
+            type="radio"
+            {...register("shipping")}
+            value="twoday"
+          />
           <label htmlFor="twoday">Two day</label>
           <br />
-          <input id="ground" type="radio" name="shipping" value="ground" />
+          <input
+            id="ground"
+            type="radio"
+            {...register("shipping")}
+            value="ground"
+          />
           <label htmlFor="ground">Ground</label>
         </fieldset>
+
+        <ReactSelect
+          label="React Select Dropdown Example"
+          control={control}
+          name="flavors"
+          options={selectOptions}
+          defaultValue={defaultValue}
+          isSearchable={false}
+        />
+
         <button
           type="submit"
           style={{ border: "solid black 1px", padding: ".5rem" }}
