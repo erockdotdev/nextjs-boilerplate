@@ -1,6 +1,7 @@
+import React from "react";
 import { InputProps } from "../types";
 
-export default function Input({
+export default function TextArea({
   register,
   name,
   label,
@@ -11,7 +12,7 @@ export default function Input({
     <div>
       <label htmlFor={name}>{label}</label>
       <br />
-      <input {...register(name, { ...validations })} />
+      <textarea {...register(name, { ...validations })}></textarea>
       {errors && errors[name] && <p> {errors[name].message}</p>}
     </div>
   );

@@ -5,4 +5,9 @@ export const selectOptions = [
   { value: "vanilla", label: "Vanilla" },
 ];
 
+export const genderOptions = [
+  { value: "male", label: "Male" },
+  { value: "female", label: "Female" },
+];
+
 export const defaultValue = { value: "vanilla", label: "Vanilla" };

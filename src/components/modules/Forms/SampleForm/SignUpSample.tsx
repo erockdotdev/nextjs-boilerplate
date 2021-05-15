@@ -1,8 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Input from "src/components/elements/FormElements/Input";
-import ReactSelect from "src/components/elements/FormElements/ReactSelect";
-import { selectOptions, defaultValue } from "src/utils/mocks/form-data";
+import Select from "src/components/elements/FormElements/Select";
+import TextArea from "src/components/elements/FormElements/TextArea";
+import {
+  selectOptions,
+  defaultValue,
+  genderOptions,
+} from "src/utils/mocks/form-data";
 export interface FormValues {
   firstName: string;
   lastName: string;
@@ -47,41 +52,30 @@ export default function SignUpSample() {
             maxLength: 20,
           }}
         />
-        <div>
-          <label htmlFor="lastName">Last Name</label>
-          <br />
-          <input
-            {...register("lastName", {
-              required: "Last Name is Required",
-              maxLength: { value: 4, message: "You exceeded max length" },
-            })}
-          />
-          {errors.lastName && <p> {errors.lastName.message}</p>}
-        </div>
-        <div>
-          <label htmlFor="age">Age</label>
-          <br />
-          <input
-            type="number"
-            {...register("age", {
-              valueAsNumber: true,
-            })}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="gender">Gender</label>
-          <select {...register("gender")} id="gender">
-            <option value="">Select</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="comments">Comments</label> <br />
-          <textarea {...register("comments")}></textarea>
-        </div>
+        <Input
+          register={register}
+          name="lastName"
+          label="Last Name"
+          errors={errors}
+          validations={{
+            required: "Last Name is Required",
+            maxLength: { value: 4, message: "You exceeded max length!!" },
+          }}
+        />
+        <Input
+          register={register}
+          name="age"
+          label="Age"
+          errors={errors}
+          validations={{ valueAsNumber: true }}
+        />
+        <Select
+          label="Gender"
+          control={control}
+          name="gender"
+          options={genderOptions}
+        />
+        <TextArea register={register} name="comments" label="Comments" />
 
         {/* Fieldset and legend should only be used when a higher-level label is necessary. 
             Single checkboxes or basic radio buttons that make sense from their labels alone 
@@ -148,13 +142,12 @@ export default function SignUpSample() {
           <label htmlFor="ground">Ground</label>
         </fieldset>
 
-        <ReactSelect
+        <Select
           label="React Select Dropdown Example"
           control={control}
           name="flavors"
           options={selectOptions}
           defaultValue={defaultValue}
-          isSearchable={false}
         />
 
         <button

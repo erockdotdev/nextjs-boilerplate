@@ -99,6 +99,11 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 };
 ```
 
+## Forms
+
+using react hook form for base form logic
+with React Select for select inputs
+
 ## IDE
 
 Feel free to use any editor but I recommend VS code with the following configurations
