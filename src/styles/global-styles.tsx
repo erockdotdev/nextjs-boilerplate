@@ -125,6 +125,19 @@ const GlobalStyles = createGlobalStyle`
       cursor: pointer;
     }
   }
+  input{
+    border: none;
+  }
+  textarea {
+    width: 100%;
+    padding: 5px 6px;
+  }
+
+  textarea, input {
+    &:focus {
+      outline: none;
+    }
+  }
 
 
  /**

@@ -1,3 +1,4 @@
+import { DetailedHTMLProps, FieldsetHTMLAttributes } from "react";
 import { DeepMap, FieldError, UseFormRegister } from "react-hook-form";
 
 type validationDetail = {
@@ -10,10 +11,11 @@ type SelectOption = {
   label: string;
 };
 
-export interface InputProps {
-  // must use any here as param wants to resolve to
-  // the form value type - but that is specific to a form and therefore
-  // not flexible for a reusable component;
+export interface InputProps
+  extends DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
   register: UseFormRegister<any>;
   name: string;
   label: string;
@@ -23,10 +25,10 @@ export interface InputProps {
     minLength?: number | validationDetail;
     valueAsNumber?: boolean;
   };
-  // must use any here as first param wants to resolve to
-  // the form value type - but that is specific to a form and therefore
-  // not flexible for a reusable component;
   errors?: DeepMap<any, FieldError>;
+}
+export interface CheckboxProps extends InputProps {
+  group: string;
 }
 
 export interface SelectProps {
@@ -36,4 +38,12 @@ export interface SelectProps {
   control: any;
   defaultValue?: SelectOption;
   isSearchable?: boolean;
+}
+
+export interface FieldSetProps
+  extends DetailedHTMLProps<
+    FieldsetHTMLAttributes<HTMLFieldSetElement>,
+    HTMLFieldSetElement
+  > {
+  legendLabel: string;
 }

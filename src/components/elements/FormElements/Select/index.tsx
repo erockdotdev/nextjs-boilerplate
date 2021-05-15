@@ -1,6 +1,6 @@
 import React from "react";
-import { Controller } from "react-hook-form";
 import ReactSelect from "react-select";
+import { Controller } from "react-hook-form";
 import { SelectProps } from "../types";
 
 export default function Select(props: SelectProps) {

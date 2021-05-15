@@ -1,6 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import Checkbox from "src/components/elements/FormElements/Checkbox";
+import FieldSet from "src/components/elements/FormElements/FieldSet";
 import Input from "src/components/elements/FormElements/Input";
+import RadioButton from "src/components/elements/FormElements/RadioButton";
 import Select from "src/components/elements/FormElements/Select";
 import TextArea from "src/components/elements/FormElements/TextArea";
 import {
@@ -70,84 +73,53 @@ export default function SignUpSample() {
           validations={{ valueAsNumber: true }}
         />
         <Select
-          label="Gender"
           control={control}
+          label="Gender"
           name="gender"
           options={genderOptions}
         />
         <TextArea register={register} name="comments" label="Comments" />
 
-        {/* Fieldset and legend should only be used when a higher-level label is necessary. 
-            Single checkboxes or basic radio buttons that make sense from their labels alone 
-            do not require fieldset and legend. Nested fieldsets can cause odd 
-            screen reader behavior and should be avoided. */}
-        <fieldset>
-          <legend>Select your pizza toppings:</legend>
-          <input
-            id="ham"
-            type="checkbox"
-            {...register("toppings")}
-            value="ham"
+        <FieldSet legendLabel="Select your topping!!">
+          <Checkbox
+            register={register}
+            name="pepperoni"
+            label="Pepperoni"
+            defaultChecked={true}
           />
-          <label htmlFor="ham">Ham</label>
-          <br />
-          <input
-            id="pepperoni"
-            type="checkbox"
-            {...register("toppings")}
-            value="pepperoni"
+          <Checkbox register={register} name="ham" label="Ham" />
+          <Checkbox register={register} name="mushrooms" label="Mushrooms" />
+          <Checkbox register={register} name="olives" label="Olives" />
+        </FieldSet>
+
+        <FieldSet legendLabel="Choose a shipping method:">
+          <RadioButton
+            register={register}
+            group="shipping"
+            name="overnight"
+            label="Overnight"
           />
-          <label htmlFor="pepperoni">Pepperoni</label>
-          <br />
-          <input
-            id="mushrooms"
-            type="checkbox"
-            {...register("toppings")}
-            value="mushrooms"
+          <RadioButton
+            register={register}
+            group="shipping"
+            name="two-day"
+            label="Two Day"
           />
-          <label htmlFor="mushrooms">Mushrooms</label>
-          <br />
-          <input
-            id="olives"
-            type="checkbox"
-            {...register("toppings")}
-            value="olives"
+          <RadioButton
+            register={register}
+            group="shipping"
+            name="ground"
+            label="Ground"
           />
-          <label htmlFor="olives">Olives</label>
-        </fieldset>
-        <fieldset>
-          <legend>Choose a shipping method:</legend>
-          <input
-            id="overnight"
-            type="radio"
-            {...register("shipping")}
-            value="overnight"
-          />
-          <label htmlFor="overnight">Overnight</label>
-          <br />
-          <input
-            id="twoday"
-            type="radio"
-            {...register("shipping")}
-            value="twoday"
-          />
-          <label htmlFor="twoday">Two day</label>
-          <br />
-          <input
-            id="ground"
-            type="radio"
-            {...register("shipping")}
-            value="ground"
-          />
-          <label htmlFor="ground">Ground</label>
-        </fieldset>
+        </FieldSet>
 
         <Select
-          label="React Select Dropdown Example"
+          label="Choose your flavor"
           control={control}
           name="flavors"
           options={selectOptions}
           defaultValue={defaultValue}
+          isSearchable
         />
 
         <button
