@@ -77,6 +77,7 @@ export default function SignUpSample() {
           label="Gender"
           name="gender"
           options={genderOptions}
+          isSearchable={false}
         />
         <TextArea register={register} name="comments" label="Comments" />
 

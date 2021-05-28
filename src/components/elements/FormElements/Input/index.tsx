@@ -13,7 +13,7 @@ const InputStyles = styled.div`
     padding: 2px 0;
     font-size: 1.2rem;
     &:focus {
-      opacity: 0.3;
+      border-bottom: solid rgba(0, 0, 0, 0.3) 1px;
     }
   }
 `;
