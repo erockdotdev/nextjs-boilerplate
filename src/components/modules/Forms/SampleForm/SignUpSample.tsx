@@ -31,8 +31,6 @@ export default function SignUpSample() {
     control,
   } = useForm<FormValues>();
 
-  // create select with downshift
-  // custom checkboxes
   // custom radio buttons
   // style rest of inputs and validation errors
   // make components of each
@@ -88,7 +86,12 @@ export default function SignUpSample() {
             label="Pepperoni"
             defaultChecked={true}
           />
-          <Checkbox register={register} name="ham" label="Ham" />
+          <Checkbox
+            register={register}
+            name="ham"
+            label="Ham"
+            disabled={true}
+          />
           <Checkbox register={register} name="mushrooms" label="Mushrooms" />
           <Checkbox register={register} name="olives" label="Olives" />
         </FieldSet>

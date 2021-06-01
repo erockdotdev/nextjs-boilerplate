@@ -50,6 +50,9 @@ const GlobalStyles = createGlobalStyle`
 
     --primaryBackgroundLight: #0000;
     --secondaryBackgroundLight: #0000;
+
+    /* --disabled: #959495; */
+    --disabled: green;
   }
 
  /**
