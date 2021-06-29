@@ -8,7 +8,6 @@ import { checkboxCheck } from "./checkbox-check";
  * This pattern is based off of this article:
  * https://moderncss.dev/pure-css-custom-checkbox-style/
  */
-
 export default function Checkbox({
   register,
   name,

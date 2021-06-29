@@ -10,7 +10,9 @@ export default function TextArea({
 }: InputProps) {
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
+      <label className="label" htmlFor={name}>
+        {label}
+      </label>
       <br />
       <textarea {...register(name, { ...validations })}></textarea>
       {errors && errors[name] && <p> {errors[name].message}</p>}

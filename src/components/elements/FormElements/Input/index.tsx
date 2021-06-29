@@ -32,7 +32,9 @@ export default function Input({
 }: InputProps) {
   return (
     <InputStyles>
-      <label htmlFor={name}>{label}</label>
+      <label className="label" htmlFor={name}>
+        {label}
+      </label>
       <input {...register(name, { ...validations })} />
       {errors && errors[name] && (
         <ErrorStyles>{errors[name].message}</ErrorStyles>

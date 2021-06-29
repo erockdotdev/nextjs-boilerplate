@@ -43,7 +43,9 @@ export default function Select(props: SelectProps) {
   }
   return (
     <>
-      <label htmlFor={name}>{label}</label>
+      <label className="label" htmlFor={name}>
+        {label}
+      </label>
       <Controller
         name={name}
         control={control}

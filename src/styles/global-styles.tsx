@@ -148,23 +148,23 @@ const GlobalStyles = createGlobalStyle`
   *     Typography
   * ===================
   */
-  h1,h2,h3,h4,h5 {
+  .h1,.h2,.h3,.h4,.h5 {
     font-family: 'RobotoMedium', serif;
     letter-spacing: 1px
   }
-  h1 {
+  .h1 {
     font-size: 40px;
     margin-bottom: 30px;
   }
-  h2 {
+  .h2 {
     font-size: 34px;
     margin-bottom: 20px;
   }
-  h3 {
+  .h3 {
     font-size: 28px;
     margin-bottom: 15px;
   }
-  label {
+  .label {
     font-size: .90rem;
   }
   // media query font sizes font size sm/12 m/16 l/20

@@ -39,7 +39,7 @@ export const CheckboxStyles = styled.label`
     transform: scale(1);
   }
   .checkbox__input input:focus + .checkbox__control {
-    box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+    border: solid currentColor 2px;
   }
   .checkbox__input input:checkbox:disabled + .checkbox__control {
     color: var(--disabled);

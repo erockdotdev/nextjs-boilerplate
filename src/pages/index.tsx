@@ -43,11 +43,11 @@ const Home = () => {
           <h2>
             <u>Headers</u>
           </h2>
-          <h1>Title H1</h1>
-          <h2>Title H2</h2>
-          <h3>Title H3</h3>
-          <h4>Title H4</h4>
-          <h5>Title H5</h5>
+          <h1 className="h1">Title H1</h1>
+          <h2 className="h2">Title H2</h2>
+          <h3 className="h3">Title H3</h3>
+          <h4 className="h4">Title H4</h4>
+          <h5 className="h5">Title H5</h5>
           <hr />
         </div>
         <div>
