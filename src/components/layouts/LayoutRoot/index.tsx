@@ -2,6 +2,7 @@ import GlobalStyles from "src/styles/global-styles";
 import SEOMetadata, {
   MetadataProps,
 } from "src/components/layouts/LayoutRoot/Metadata";
+import styled from "styled-components";
 
 interface LayoutRootProps {
   children: React.ReactNode;

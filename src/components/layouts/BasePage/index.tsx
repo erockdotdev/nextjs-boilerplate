@@ -1,8 +1,11 @@
-import Footer from "src/components/modules/Footer";
-import Nav from "src/components/modules/Navigation";
-import { MainStyles } from "src/components/layouts/BasePage/styles";
 import LayoutRoot from "src/components/layouts/LayoutRoot";
+import NotificationBanner from "src/components/modules/Notifications/NotificationBanner";
+import Nav from "src/components/modules/Navigation";
+import Footer from "src/components/modules/Footer";
+
+import { MainStyles } from "src/components/layouts/BasePage/styles";
 import { MetadataProps } from "src/components/layouts/LayoutRoot/Metadata";
+import styled from "styled-components";
 
 interface BasePageProps {
   children: React.ReactNode;
@@ -11,6 +14,12 @@ interface BasePageProps {
   metadata?: MetadataProps;
 }
 
+const BasePageStyles = styled.div`
+  max-width: 1280px;
+  padding: 0 15px 0 15px;
+  margin: 0 auto;
+`;
+
 export default function BasePage({
   children,
   showNav,
@@ -18,10 +27,12 @@ export default function BasePage({
   metadata,
 }: BasePageProps) {
   return (
-    <LayoutRoot metadata={metadata}>
-      {showNav && <Nav />}
-      <MainStyles>{children}</MainStyles>
-      {showFooter && <Footer />}
-    </LayoutRoot>
+    <BasePageStyles>
+      <LayoutRoot metadata={metadata}>
+        {showNav && <Nav />}
+        <MainStyles>{children}</MainStyles>
+        {showFooter && <Footer />}
+      </LayoutRoot>
+    </BasePageStyles>
   );
 }

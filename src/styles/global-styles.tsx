@@ -64,13 +64,12 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    padding: 0 15px 0 15px;
+    padding: 0;
     margin: 0 auto;
     font-size: 10px;  
     font-family: Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
       Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 18px;
-    max-width: 1280px;
   }
   img {
     max-width: 100%;
