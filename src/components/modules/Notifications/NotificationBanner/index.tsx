@@ -8,6 +8,7 @@ const NotificationBannerStyles = styled.header`
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 `;
 
+// add ability to close
 export default function NotificationBanner({
   children,
 }: React.DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>) {

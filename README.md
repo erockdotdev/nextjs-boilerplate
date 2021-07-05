@@ -113,3 +113,28 @@ Plugins
 
 Folder Structure
 Loosely based on [this](https://wityan.medium.com/next-js-project-structure-1531610bed71) article
+
+# media query
+
+breakpoint-css or breakpoint-js
+
+css
+
+// Examples
+// import { mediaQueryRange } from "src/styles/breakpoints/breakpoint-css";
+
+// @media ${mediaQueryRange.mobile} {
+// background-color: green;
+// }
+// @media ${mediaQueryRange.tablet} {
+// background-color: red;
+// }
+// @media ${mediaQueryRange.desktop} {
+// background-color: yellow;
+// }
+// @media ${mediaQueryRange.desktopXL} {
+// background-color: black;
+// }
+
+icons
+<https://www.iconfinder.com/>

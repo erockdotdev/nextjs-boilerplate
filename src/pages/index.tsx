@@ -1,38 +1,31 @@
 import BasePage from "src/components/layouts/BasePage";
 import SignUpSample from "src/components/modules/Forms/SampleForm/SignUpSample";
-import NotificationBanner from "src/components/modules/Notifications/NotificationBanner";
+import OpenModalButton from "src/components/modules/Modals/Base/OpenModalButton";
+import ExampleModal from "src/components/modules/Modals/ExampleModal";
 
-//*** Decide what rules need to be in components and what should be set up as global styles */
-
-// Subtitle
-// Default (body text – as well as most controls, like text boxes, dropdowns, buttons, and menus)
-// - line spacing/height
-// - less character spacing
-// - limit width 45–90 characters
-// - font size sm/12 m/16 l/20
-
-// Text Input / Areas
-// Body - see body above
-// Labels - 14 px, lighter color
-
-const notificationBannerData = (
+const notificationBannerData: JSX.Element = (
   <span>
     This is a banner with a <a href="google.com">link</a>
   </span>
 );
 
+const notificationToast: JSX.Element = <span>Notification Toast Example</span>;
+
 const Home = () => {
   return (
     <>
-      {notificationBannerData && (
-        <NotificationBanner>{notificationBannerData}</NotificationBanner>
-      )}
-
-      <BasePage showNav showFooter>
+      <BasePage
+        showNav
+        showFooter
+        notificationBannerData={notificationBannerData}
+        notificationToast={notificationToast}
+      >
         <main>
           <h1>NextJS Boiler Plate</h1>
           <br />
           <br />
+          <OpenModalButton />
+          <ExampleModal />
           <hr />
           <h2>Font Families</h2>
           <ul>

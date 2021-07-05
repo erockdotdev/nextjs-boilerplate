@@ -26,6 +26,7 @@ export default class MyDocument extends Document {
         {/* <link rel="shortcut icon" href="/static/favicon.ico" /> */}
         <body>
           <Main />
+          <div id="modal-root"></div>
           <NextScript />
         </body>
       </Html>

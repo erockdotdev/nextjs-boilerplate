@@ -2,7 +2,7 @@ import Link from "next/link";
 import LogoLink from "src/components/elements/LogoLink";
 
 import { FOOTER_LINKS } from "./links";
-import { COPYRIGHT } from "src/constants/literals";
+import { COPYRIGHT } from "src/constants/literals/index";
 import { LinkType } from "src/typescript/global-types";
 
 import {
@@ -13,7 +13,7 @@ import {
 } from "./styles";
 
 function renderFooterLinks(links: LinkType[]) {
-  return FOOTER_LINKS.map((link: LinkType) => (
+  return links.map((link: LinkType) => (
     <Link key={link.href.toString()} href={link.href}>
       {link.label}
     </Link>
