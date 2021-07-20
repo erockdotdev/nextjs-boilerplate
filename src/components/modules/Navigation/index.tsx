@@ -1,5 +1,5 @@
-import Image from "next/image";
-import useViewport from "src/hooks/useViewPort";
+import useViewport from "src/hooks/useViewport";
+
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 

@@ -7,6 +7,6 @@ export const MobileNavLinkStyles = styled.li`
     padding-right: 0;
   }
   a {
-    color: white;
+    color: var(--white);
   }
 `;

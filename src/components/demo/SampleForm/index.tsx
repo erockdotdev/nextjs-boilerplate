@@ -6,6 +6,8 @@ import Input from "src/components/elements/FormElements/Input";
 import RadioButton from "src/components/elements/FormElements/RadioButton";
 import Select from "src/components/elements/FormElements/Select";
 import TextArea from "src/components/elements/FormElements/TextArea";
+import Button from "src/components/elements/FormElements/Button";
+
 import {
   selectOptions,
   defaultValue,
@@ -126,12 +128,7 @@ export default function SignUpSample() {
           isSearchable
         />
 
-        <button
-          type="submit"
-          style={{ border: "solid black 1px", padding: ".5rem" }}
-        >
-          Sign Up
-        </button>
+        <Button type="submit">Sign Up</Button>
         <div style={{ height: "200px" }} />
       </form>
     </div>

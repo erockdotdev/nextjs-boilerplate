@@ -1,11 +1,20 @@
 import styled from "styled-components";
 
 export const MobileNavOverlayStyles = styled.div`
-  background: black;
-  color: white;
+  background: var(--black);
+  color: var(--white);
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
+`;
+
+export const MobileNavULStyles = styled.ul`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MobileNavHeader = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;

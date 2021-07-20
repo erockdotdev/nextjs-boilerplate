@@ -28,16 +28,33 @@ const GlobalStyles = createGlobalStyle`
   * ==================
   */
   html{
-    --red: #ff1234;
-    --black: #393939;
+    --disabled: #959495;
+
+    --black: #000000;
+    --blackT5: rgba(0, 0, 0, 0.5);
+
     --gray: #3a3a3a;
     --lightGray: #e1e1e1;
-    --blurp: #2de708;
-    --offWhite: #ededed;
-    --maxWidth: 1000px;
-    --bs: 0 12px 24px 0 rgba(0,0,0,0.9); 
-    --gutter: 2rem;
 
+    --white: #ffffff;
+    --offWhite: #ededed;
+    --ghostWhite: #f8f8ff;
+
+    --red: #ff1234;
+    --neonGreen: #2de708;
+    /* --disabled: green; */
+ 
+
+    --info: #00529B;
+    --infoBackground: #BDE5F8;
+    --success: #4F8A10;
+    --successBackground: #DFF2BF;
+    --warning: #9F6000;
+    --warningBackground: #FEEFB3;
+    --error: #D8000C;
+    --errorBackground: #FFD2D2;
+
+    
     --primaryBrandColor: #0000;
     --secondaryBrandColor: #0000;
     --thirdBrandColor: #0000;
@@ -51,8 +68,13 @@ const GlobalStyles = createGlobalStyle`
     --primaryBackgroundLight: #0000;
     --secondaryBackgroundLight: #0000;
 
-    /* --disabled: #959495; */
-    --disabled: green;
+    
+
+
+     /* misc.  */
+    --maxWidth: 1000px;
+    --boxShadow: 0 12px 24px 0 rgba(0,0,0,0.9); 
+    --gutter: 2rem;
   }
 
  /**
@@ -94,13 +116,11 @@ const GlobalStyles = createGlobalStyle`
   button:hover {
     background: transparent;
     box-shadow: 0px 0px 0px transparent;
-    border: 0px solid transparent;
     text-shadow: 0px 0px 0px transparent;
     cursor: pointer;
   }
   button:active {
     outline: none;
-    border: none;
   }
   button:focus {
     outline: 0;

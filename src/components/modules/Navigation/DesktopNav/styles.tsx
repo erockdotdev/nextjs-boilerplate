@@ -1,5 +1,3 @@
-import { mediaQueryRange } from "src/styles/breakpoints/breakpoint-css";
-
 import styled from "styled-components";
 
 export const NavStyles = styled.nav`
